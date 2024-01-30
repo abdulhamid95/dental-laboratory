@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="crm_crm_case_kanban_view_leads_inherit">
+        <field name="name">crm.lead.kanban.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+
+                <div>
+                    Altyapi
+                     <field name="altyapi_prova" />
+                 </div>
+                <div>
+                     Dentin
+                     <field name="dentin_prova"/>
+                 </div>
+                 <div>
+                     Bitim
+                     <field name="bitim_datetime"/>
+                 </div>
+
+                <div>
+                    <field name="teeth_status" />
+                </div>
+            </field>
+                <xpath expr="//div[@class='oe_kanban_footer']//div[@class='o_kanban_record_bottom']/div[@class='oe_kanban_bottom_left']/field[@name='activity_ids']" position="after">
+                    <button type="object" name="open_crm_card" target="new" icon="fa-eye"/>
+                </xpath>
+        </field>
+    </record>
+</odoo>

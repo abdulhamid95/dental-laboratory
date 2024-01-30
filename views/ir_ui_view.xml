@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="crm_lead_report">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Lab Order</h2>
+                    <table style="width:100%; text-align:'center';">
+                        <tr>
+                            <h3>Hasta Adi: <span t-field="o.name"/></h3>
+                        </tr>
+                        <tr>
+                            <td><p><span>Klinik Code</span></p></td>
+                            <td><p><span t-field="o.doctor_code"/></p></td>
+                        </tr>
+<!--                        <tr>-->
+<!--                            <td><p><span>Doctor adi</span></p></td>-->
+<!--                            <td><p><span t-field="o.doctor_id"/></p></td>-->
+<!--                        </tr>-->
+                        <tr>
+                            <td><p><span>Dis Rangi</span></p></td>
+                            <td><p><span t-field="o.color_number"/></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span>Altyapi Prova Tarih</span></p></td>
+                            <td><p><span t-field="o.altyapi_prova"/></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span>Dentin Prova Tarih</span></p></td>
+                            <td><p><span t-field="o.dentin_prova"/></p></td>
+                        </tr>
+                        <tr>
+                            <td><p><span>Bitim Tarih</span></p></td>
+                            <td><p><span t-field="o.bitim_datetime"/></p></td>
+                        </tr>
+                    </table>
+
+                    <table style="width:100%; margin-top:20px;">
+                        <tr t-foreach="o.teeth_ids" t-as="teeth">
+                            <td><p><span>Dis Turu</span></p></td><td><p><span t-field="teeth.name"/></p></td>
+                            <td><p><span>Dis Sayi</span></p></td><td><p><span t-field="teeth.teeth_number"/></p></td>
+                        </tr>
+                    </table>
+
+                    <div style="margin-top:10px;">
+                        <h5>Notes: <span t-field="o.description" /> </h5>
+                    </div>
+<!--                    <p><span t-field="o.altyapi_prova"/></p>-->
+<!--                    <p><span t-field="o.bitim_datetime"/></p>-->
+<!--                    <p><span t-field="o.dentin_prova"/></p>-->
+<!--                    <p><span t-field="o.qrcode"/></p>-->
+                    <img t-att-src="'/report/barcode/QR/%s'%o.qrcode.replace('#','%23')" style="width:150px;height:150px; text-align:center; margin-top:20px; margin-left:225px;" alt="Barcode"/>
+<!--                    <img t-att-src="'/report/barcode/QR/%s'%o.qrcode.replace('#','%23')" style="width:150px;height:150px; text-align:center; margin-top:20px; margin-left:225px;" alt="Barcode"/>-->
+<!--                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR',o.qrcode,100,100)" alt="barcode" />-->
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+
+</odoo>

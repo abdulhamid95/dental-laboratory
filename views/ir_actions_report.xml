@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="action_report_crm_lead" model="ir.actions.report">
+    <field name="name">CRM Reports</field>
+    <field name="model">crm.lead</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">dental-laboratory.crm_lead_report</field>
+    <field name="report_file">dental-laboratory.crm_lead_report</field>
+    <field name="binding_type">report</field>
+<!--    <field name="data">{'model': 'crm.lead', 'form': {'qr_code_url': 'object.get_qr_code_url()'}} </field>-->
+</record>
+
+</odoo>

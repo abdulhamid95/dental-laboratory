@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="crm_porselenci_form_view" model="ir.ui.view">
+      <field name="model">crm.porselenci</field>
+      <field name="name">crm.crm_porselenci_form_view</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name" />
+          </group>
+        </form>
+      </field>
+    </record>
+    <record id="crm_porselenci_tree_view" model="ir.ui.view">
+      <field name="model">crm.porselenci</field>
+      <field name="name">crm.crm_porselenci_tree_view</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+        </tree>
+      </field>
+    </record>
+    <record id="crm_porselenci_action" model="ir.actions.act_window">
+      <field name="name">ALl porselenci</field>
+      <field name="res_model">crm.porselenci</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+                No porselenci Data
+        </p><p>
+      You don't add any porselenci, You can add by click button New
+      </p>
+      </field>
+    </record>
+
+<!--    <menuitem-->
+<!--      name="Porselenci"-->
+<!--      id="crm_all_porselenci_menu"-->
+<!--      parent="crm.crm_menu_root"-->
+<!--      action="crm_porselenci_action"-->
+<!--      />-->
+</odoo>

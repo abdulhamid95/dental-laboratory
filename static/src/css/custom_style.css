@@ -1,0 +1,28 @@
+.oe_status_dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.oe_status_dot_waiting {
+    background-color: #FF0000; /* تعيين اللون الخاص بالحالة "waiting" */
+}
+
+.oe_status_dot_doing {
+    background-color: #00FF00; /* تعيين اللون الخاص بالحالة "doing" */
+}
+
+.oe_status_dot_done {
+    background-color: #0000FF; /* تعيين اللون الخاص بالحالة "done" */
+}
+
+.oe_status_dot_late {
+    background-color: #FFFF00; /* تعيين اللون الخاص بالحالة "late" */
+}
+.float-left {
+    float: left !important;
+}

@@ -1,0 +1,44 @@
+<odoo>
+    <record model="ir.ui.view" id="crm_crm_case_tree_view_oppor_inherit">
+        <field name="name">crm.lead.tree.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='195']" position="attributes">
+                 <attribute name="attrs">{"invisible": "[('flag', '=', True)]"}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='215']" position="attributes">
+                 <attribute name="attrs">{"invisible": "[('flag', '=', True)]"}</attribute>
+            </xpath>
+            <field name="phone" position="attributes">
+                  <attribute name="invisible">True</attribute>
+            </field>
+            <field name="email_from" position="attributes">
+                  <attribute name="invisible">True</attribute>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="expected_revenue" position="attributes">
+                  <attribute name="invisible">True</attribute>
+            </field>
+            <field name="my_activity_date_deadline" position="attributes">
+                  <attribute name="invisible">True</attribute>
+            </field>
+            <field name="contact_name" position="attributes">
+                  <attribute name="invisible">True</attribute>
+            </field>
+            <field name="name" position="attributes">
+                  <attribute name="string">Sick Name</attribute>
+            </field>
+            <field name="name" position="after">
+                  <field name="clinic_id" attrs="{'invisible': [('flag', '=', True)] }"/>
+                  <field name="doctor_id" attrs="{'invisible': [('flag', '=', True)] }"/>
+                    <field name="flag" invisible="1" />
+                <field name="altyapi_prova" />
+                 <field name="dentin_prova" />
+                 <field name="bitim_datetime" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="crm_teeth_form_view" model="ir.ui.view">
+      <field name="model">crm.teeth</field>
+      <field name="name">crm.crm_teeth_form_view</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name" />
+              <field name="teeth_number" />
+          </group>
+        </form>
+      </field>
+    </record>
+    <record id="crm_teeth_tree_view" model="ir.ui.view">
+      <field name="model">crm.teeth</field>
+      <field name="name">crm.crm_teeth_tree_view</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="name" />
+            <field name="teeth_number" />
+        </tree>
+      </field>
+    </record>
+    <record id="crm_teeth_action" model="ir.actions.act_window">
+      <field name="name">ALl Designer</field>
+      <field name="res_model">crm.teeth</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+                No Designer Data
+        </p><p>
+      You don't add any teeth, You can add by click button New
+      </p>
+      </field>
+    </record>
+
+<!--    <menuitem-->
+<!--      name="Designers"-->
+<!--      id="crm_all_teeth_menu"-->
+<!--      parent="crm.crm_menu_root"-->
+<!--      action="crm_teeth_action"-->
+<!--      />-->
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="access_crm_color" model="ir.model.access">
+    <field name="name">Access CRM Color</field>
+    <field name="model_id" ref="model_crm_color"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="False"/>
+    <field name="perm_unlink" eval="False"/>
+</record>
+    <record id="access_crm_worker" model="ir.model.access">
+    <field name="name">Access CRM Worker</field>
+    <field name="model_id" ref="model_crm_worker"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="False"/>
+    <field name="perm_unlink" eval="False"/>
+</record>
+    <record id="access_crm_porselenci" model="ir.model.access">
+    <field name="name">Access CRM Porselenci</field>
+    <field name="model_id" ref="model_crm_porselenci"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="False"/>
+    <field name="perm_unlink" eval="False"/>
+</record>
+<record id="access_crm_teeth" model="ir.model.access">
+    <field name="name">Access CRM Teeth</field>
+    <field name="model_id" ref="model_crm_teeth"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="True"/>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+</record>
+</odoo>

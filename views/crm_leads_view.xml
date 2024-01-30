@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+      <record id="crm_lead_form_inherit" model="ir.ui.view">
+          <field name="name">crm.lead.form.inherit</field>
+          <field name="model">crm.lead</field>
+          <field name="inherit_id" ref="crm.crm_lead_view_form" />
+          <field name="arch" type="xml">
+
+               <button name="action_set_won_rainbowman" position="attributes" >
+                    <attribute name="invisible">1</attribute>
+                </button>
+
+              <button name="%(crm.crm_lead_lost_action)d" position="attributes" >
+                    <attribute name="invisible">1</attribute>
+                </button>
+              <field name="stage_id" position="before">
+                   <button string="Back" class="oe_highlight" icon="fa-mail-reply-all" type="object" name="back_function"/>
+                  <button string="Archive" class="oe_highlight" type="object" name="archive_lead" icon="fa-archive"/>
+              </field>
+
+              <xpath expr="//button[@name='action_schedule_meeting']" position="before">
+                  <button string="Save" type="object" class="oe_highlight float-left" icon="fa-save" name="back_function"/>
+                  <button string="Delete" type="object" class="oe_highlight float-left" icon="fa-trash" name="delete_lead"/>
+              </xpath>
+                <field name="email_from" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name="phone" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+              <field name="tag_ids" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+              <xpath expr="." position="inside">
+                  <script type="text/javascript">
+                      document.getElementById("probability").remove();
+                  </script>
+
+            <link rel="stylesheet" href="/dental-laboratory/static/src/css/custom_style.css"/>
+
+              </xpath>
+              <field name="probability" position="attributes">
+                  <attribute name="invisible">True</attribute>
+              </field>
+              <field name="expected_revenue" position="attributes">
+                  <attribute name="invisible">True</attribute>
+              </field>
+              <field name="partner_id" position="attributes">
+                  <attribute name="attrs">{"invisible": "[('flag', '=', True)]"}</attribute>
+                  <attribute name="name">clinic_id</attribute>
+                  
+              </field>
+              <field name="partner_id" position="after">
+                  <field name="flag" invisible="1"/>
+                  <field name="clinic_id" style="border-bottom: 1px solid #E9ECEF !important;" attrs="{'invisible': [('flag', '=', True)] }"/>
+                  <field name="doctor_id" attrs="{'invisible': [('flag', '=', True)] }" style="border-bottom: 1px solid #E9ECEF !important;"/>
+<!--                  <field name="lab_team" style="border-bottom: 1px solid #E9ECEF !important;"/>-->
+                  <field name="teeth_ids" widget="one2many_list">
+                      <tree editable="bottom">
+                          <field name="name" />
+                          <field name="teeth_number" style="color: red;" />
+                      </tree>
+                  </field>
+
+
+              </field>
+              <field name="user_id" position="attributes">
+                  <attribute name="string">Lab Tech</attribute>
+                  <attribute name="style">border-bottom: 1px solid #000 !important;</attribute>
+              </field>
+              <field name="name" position="attributes">
+                  <attribute name="placeholder">Sick Name</attribute>
+                  <attribute name="string">Sick Name</attribute>
+              </field>
+              <field name="date_deadline" position="attributes">
+                  <attribute name="invisible">1</attribute>
+              </field>
+              <field name="user_id" position="after">
+<!--                  <field name="alameensoft_number" attrs="{'readonly': [('flag', '=', True)] }" style="border-bottom: 1px solid #E9ECEF !important;" />-->
+                  <field name="color_number" attrs="{'readonly': [('flag', '=', True)] }" style="border-bottom: 1px solid #E9ECEF !important;"/>
+                  <field name="create_date" style="border-bottom: 1px solid #E9ECEF !important;" />
+                  <field name="altyapi_prova" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" style="border-bottom: 1px solid #E9ECEF !important;" />
+                  <field name="dentin_prova" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" style="border-bottom: 1px solid #E9ECEF !important;" />
+                  <field name="bitim_datetime" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" style="border-bottom: 1px solid #E9ECEF !important;" />
+                  <field name="doctor_code" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" style="border-bottom: 1px solid #E9ECEF !important;" />
+                    <field name="qrcode" invisible="1"/>
+              </field>
+              <xpath expr="//page[@name='internal_notes']" position="before">
+
+                      <page name="workers" string="worker">
+                          <group>
+                              <group>
+                              <field name="worker_name" />
+
+                          </group>
+                          <group>
+                              <field name="porselenci_name" />
+                          </group>
+                          </group>
+
+                      </page>
+
+                  </xpath>
+              <notebook>
+
+                <page name="image_page" string="Image">
+                    <field name="image" widget="image" />
+                </page>
+            </notebook>
+          </field>
+      </record>
+
+
+      <record id="crm_quick_create_opportunity_form" model="ir.ui.view">
+          <field name="name">crm.lead.kanban.inherit</field>
+          <field name="model">crm.lead</field>
+           <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+
+          <field name="arch" type="xml">
+              <field name="partner_id" position="attributes">
+                  <attribute name="invisible">True</attribute>
+                  <attribute name="string">Clinic Name</attribute>
+              </field>
+              <field name="partner_id" position="after">
+                  <field name="flag" invisible="1"/>
+                  <field name="clinic_id" attrs="{'invisible': [('flag', '=', True)] }"/>
+                  <field name="doctor_id" attrs="{'invisible': [('flag', '=', True)] }"/>
+              </field>
+              <field name="name" position="attributes">
+                  <attribute name="string">Sick Name</attribute>
+                  <attribute name="placeholder">Sick Name</attribute>
+              </field>
+              <field name="expected_revenue" position="attributes">
+                  <attribute name="invisible">True</attribute>
+              </field>
+              <field name="user_id" position="after">
+                  <field name="altyapi_prova" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" />
+                  <field name="dentin_prova" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" />
+                  <field name="bitim_datetime" t-options="{'format': 'dd / MM / yyyy  HH / mm'}" />
+              </field>
+          </field>
+      </record>
+</odoo>
